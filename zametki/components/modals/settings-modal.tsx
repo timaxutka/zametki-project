@@ -17,16 +17,16 @@ export const SettingsModal = () => {
       <DialogContent>
         <DialogHeader className="border-b pb-3">
           <h2 className="text-lg font-medium">
-            Мои настройки
+            Настройки
           </h2>
         </DialogHeader>
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-y-1">
             <Label>
-                Appearance
+              Внешний вид
             </Label>
             <span className="text-[0.8rem] text-muted-foreground">
-                Настройте внешний вид Zametki на вашем устройстве
+              Поменяй внешний вид Zametki 
             </span>
           </div>
           <ModeToggle />

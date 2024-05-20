@@ -56,7 +56,7 @@ export const CoverImageModal = () => {
       <DialogContent>
         <DialogHeader>
           <h2 className="text-center text-lg font-semibold">
-            Cover Image
+            Обложка
           </h2>
         </DialogHeader>
         <SingleImageDropzone

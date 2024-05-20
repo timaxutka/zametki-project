@@ -120,15 +120,15 @@ export const Navigation = () => {
       setTimeout(() => setIsResetting(false), 300);
     }
   }
-// создание
+
   const handleCreate = () => {
-    const promise = create({ title: "Untitled" })
+    const promise = create({ title: "Без названия" })
       .then((documentId) => router.push(`/documents/${documentId}`))
-      
+
     toast.promise(promise, {
-      loading: "Создание новой заметки...",
-      success: "Новая заметка создана!",
-      error: "Не удалось создать новую заметку."
+      loading: "Создание заметки...",
+      success: "Заметка создана!",
+      error: "Ошибка создания заметки."
     });
   };
 
@@ -155,19 +155,19 @@ export const Navigation = () => {
         <div>
           <UserItem />
           <Item
-            label="Search"
+            label="Поиск"
             icon={Search}
             isSearch
             onClick={search.onOpen}
           />
           <Item
-            label="Settings"
+            label="Настройки"
             icon={Settings}
             onClick={settings.onOpen}
           />
           <Item
             onClick={handleCreate}
-            label="New page"
+            label="Новая заметка"
             icon={PlusCircle}
           />
         </div>
@@ -176,11 +176,11 @@ export const Navigation = () => {
           <Item
             onClick={handleCreate}
             icon={Plus}
-            label="Add a page"
+            label="Добавить заметку"
           />
           <Popover>
             <PopoverTrigger className="w-full mt-4">
-              <Item label="Trash" icon={Trash} />
+              <Item label="Корзина" icon={Trash} />
             </PopoverTrigger>
             <PopoverContent
               className="p-0 w-72"

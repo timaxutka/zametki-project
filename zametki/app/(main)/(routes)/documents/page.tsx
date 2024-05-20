@@ -16,13 +16,13 @@ const DocumentsPage = () => {
   const create = useMutation(api.documents.create);
 
   const onCreate = () => {
-    const promise = create({ title: "Untitled" })
+    const promise = create({ title: "Без названия" })
       .then((documentId) => router.push(`/documents/${documentId}`))
 
     toast.promise(promise, {
-      loading: "Создание новой заметки...",
-      success: "Новая заметка создана!",
-      error: "Ошибка при создании новой заметки."
+      loading: "Создание заметки...",
+      success: "Заметка создана!",
+      error: "Ошибка создания заметки."
     });
   };
 
@@ -43,7 +43,7 @@ const DocumentsPage = () => {
         className="hidden dark:block"
       />
       <h2 className="text-lg font-medium">
-        Добро пожаловать в Zametki, {user?.firstName}
+        {user?.firstName}, добро пожаловать в Zametki
       </h2>
       <Button onClick={onCreate}>
         <PlusCircle className="h-4 w-4 mr-2" />

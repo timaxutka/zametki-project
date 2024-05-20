@@ -16,15 +16,15 @@ export const Heading = () => {
     return (
         <div className='max-w-3xl space-y-4'>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold">
-                Ваши идеи, документы и планы в одном месте. Добро пожаловать в <span className="underline">Zametki</span>
+                Ваши идеи, заметки и планы в одном месте. Добро пожаловать в <span className="underline">Zametki</span>
             </h1>
             <h3 className="text-base sm:text-xl md:2xl font-medium">
-                Zametki - это рабочее пространство, где работать<br />
+                <span className="underline">Zametki</span> - это рабочее пространство, где работать<br />
                 лучше, легче и быстрее
             </h3>
             {isLoading && (
                 <div className="w-full flex items-center justify-center">
-                <Spinner size="lg"/>
+                <Spinner size="lg"/> 
                 </div>
             )}
             {isAuthenticated && !isLoading && (

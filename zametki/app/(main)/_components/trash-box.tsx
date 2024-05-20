@@ -39,7 +39,7 @@ export const TrashBox = () => {
     toast.promise(promise, {
       loading: "Восстановление заметки...",
       success: "Заметка восстановлена!",
-      error:"Не удалось восстановить заметку."
+      error:"Ошибка восстановления заметки."
     });
   };
 
@@ -51,7 +51,7 @@ export const TrashBox = () => {
     toast.promise(promise, {
       loading: "Удаление заметки...",
       success: "Заметка удалена!",
-      error:"Не удалось удалить заметку."
+      error:"Ошибка удаления заметки."
     });
 
     if (params.documentId === documentId) {
@@ -75,12 +75,12 @@ export const TrashBox = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="h-7 px-2 focus-visible:ring-transparent bg-secondary"
-          placeholder="Filter by page title..."
+          placeholder="Введите название заметки..."
         />
       </div>
       <div className="mt-2 px-1 pb-1">
         <p className="hidden last:block text-xs text-center text-muted-foreground pb-2">
-            Документы не найдены.
+          Заметок не найдено.
         </p>
         {filteredDocuments?.map((document) => (
           <div

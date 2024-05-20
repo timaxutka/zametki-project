@@ -11,7 +11,7 @@ import {
   Popover,
   PopoverContent
 } from "@/components/ui/popover"
-//import { useOrigin } from "@/hooks/use-origin";
+import { useOrigin } from "@/hooks/use-origin";
 import { api } from "@/convex/_generated/api";
 import { Button } from "@/components/ui/button";
 
@@ -22,7 +22,7 @@ interface PublishProps {
 export const Publish = ({
   initialData
 }: PublishProps) => {
- // const origin = useOrigin();
+  const origin = useOrigin();
   const update = useMutation(api.documents.update);
 
   const [copied, setCopied] = useState(false);
@@ -40,9 +40,9 @@ export const Publish = ({
       .finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
-      loading: "Publishing...",
-      success: "Note published",
-      error: "Failed to publish note.",
+      loading: "Публикация...",
+      success: "Заметка опубликована",
+      error: "Ошибка публикации заметки.",
     });
   };
 
@@ -56,9 +56,9 @@ export const Publish = ({
       .finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
-      loading: "Unpublishing...",
-      success: "Note unpublished",
-      error: "Failed to unpublish note.",
+      loading: "Отмена публикации...",
+      success: "Заметка не опубликована",
+      error: "Ошибка отмены публикации.",
     });
   };
 
@@ -75,7 +75,7 @@ export const Publish = ({
     <Popover>
       <PopoverTrigger asChild>
         <Button size="sm" variant="ghost">
-          Publish 
+          Опубликовать 
           {initialData.isPublished && (
             <Globe
               className="text-sky-500 w-4 h-4 ml-2"
@@ -94,7 +94,7 @@ export const Publish = ({
             <div className="flex items-center gap-x-2">
               <Globe className="text-sky-500 animate-pulse h-4 w-4" />
               <p className="text-xs font-medium text-sky-500">
-                This note is live on web.
+                Ссылка на заметку.
               </p>
             </div>
             <div className="flex items-center">
@@ -121,7 +121,7 @@ export const Publish = ({
               disabled={isSubmitting}
               onClick={onUnpublish}
             >
-              Unpublish
+              Отменить публикацию
             </Button>
           </div>
         ) : (
@@ -130,10 +130,10 @@ export const Publish = ({
               className="h-8 w-8 text-muted-foreground mb-2"
             />
             <p className="text-sm font-medium mb-2">
-              Publish this note
+              Опубликовать эту заметку
             </p>
             <span className="text-xs text-muted-foreground mb-4">
-              Share your work with others.
+              Поделитесь своей работой с другими.
             </span>
             <Button
               disabled={isSubmitting}
@@ -141,7 +141,7 @@ export const Publish = ({
               className="w-full text-xs"
               size="sm"
             >
-              Publish
+              Опубликовать
             </Button>
           </div>
         )}

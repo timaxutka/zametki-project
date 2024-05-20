@@ -34,9 +34,9 @@ export const Menu = ({
     const promise = archive({ id: documentId })
 
     toast.promise(promise, {
-      loading: "Moving to trash...",
-      success: "Note moved to trash!",
-      error: "Failed to archive note."
+      loading: "Перемещение в корзину...",
+      success: "Заметка перемещена в корзину!",
+      error: "Не удалось переместить заметку.."
     });
 
     router.push("/documents");
@@ -57,11 +57,11 @@ export const Menu = ({
       >
         <DropdownMenuItem onClick={onArchive}>
           <Trash className="h-4 w-4 mr-2" />
-          Delete
+          Удалить
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <div className="text-xs text-muted-foreground p-2">
-          Last edited by: {user?.fullName}
+          Последний раз редактировал: {user?.fullName}
         </div>
       </DropdownMenuContent>
     </DropdownMenu>

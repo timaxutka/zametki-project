@@ -46,7 +46,7 @@ export const Toolbar = ({
     setValue(value);
     update({
       id: initialData._id,
-      title: value || "Untitled"
+      title: value || "Без названия"
     });
   };
 
@@ -105,11 +105,11 @@ export const Toolbar = ({
               size="sm"
             >
               <Smile className="h-4 w-4 mr-2" />
-              Add icon
+              Добавить иконку
             </Button>
           </IconPicker>
         )}
-        {!initialData.coverImage && !preview && (
+        {/* {!initialData.coverImage && !preview && (
           <Button
             onClick={coverImage.onOpen}
             className="text-muted-foreground text-xs"
@@ -117,9 +117,9 @@ export const Toolbar = ({
             size="sm"
           >
             <ImageIcon className="h-4 w-4 mr-2" />
-            Add cover
+            Добавить обложку
           </Button>
-        )}
+        )} */}
       </div>
       {isEditing && !preview ? (
         <TextareaAutosize

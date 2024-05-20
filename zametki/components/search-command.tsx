@@ -55,11 +55,11 @@ export const SearchCommand = () => {
   return (
     <CommandDialog open={isOpen} onOpenChange={onClose}>
       <CommandInput
-        placeholder={`Поиск в заметках ${user?.fullName}`}
+        placeholder={`Поиск в заметках пользователя ${user?.fullName}`}
       />
       <CommandList>
         <CommandEmpty>Результатов не найдено.</CommandEmpty>
-        <CommandGroup heading="Документы">
+        <CommandGroup heading="Заметки">
           {documents?.map((document) => (
             <CommandItem
               key={document._id}
